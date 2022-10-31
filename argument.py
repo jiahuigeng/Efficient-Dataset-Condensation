@@ -84,7 +84,7 @@ parser.add_argument('-d',
                     type=str,
                     help='dataset (options: mnist, fashion, svhn, cifar10, cifar100, and imagenet)')
 parser.add_argument('--data_dir',
-                    default='/data_large/readonly',
+                    default='~/data',
                     type=str,
                     help='directory that containing dataset, except imagenet (see data.py)')
 parser.add_argument('--imagenet_dir', default='/ssd_data/imagenet/', type=str)

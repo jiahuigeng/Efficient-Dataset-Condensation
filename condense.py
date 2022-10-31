@@ -246,7 +246,7 @@ def load_resized_data(args):
     """Load original training data (fixed spatial size and without augmentation) for condensation
     """
     if args.dataset == 'cifar10':
-        train_dataset = datasets.CIFAR10(args.data_dir, train=True, transform=transforms.ToTensor())
+        train_dataset = datasets.CIFAR10(args.data_dir, download=True, train=True, transform=transforms.ToTensor())
         normalize = transforms.Normalize(mean=MEANS['cifar10'], std=STDS['cifar10'])
         transform_test = transforms.Compose([transforms.ToTensor(), normalize])
         val_dataset = datasets.CIFAR10(args.data_dir, train=False, transform=transform_test)
@@ -254,6 +254,7 @@ def load_resized_data(args):
 
     elif args.dataset == 'cifar100':
         train_dataset = datasets.CIFAR100(args.data_dir,
+                                        download=True,
                                           train=True,
                                           transform=transforms.ToTensor())
 
